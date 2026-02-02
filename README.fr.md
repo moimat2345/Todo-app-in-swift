@@ -1,162 +1,156 @@
-<div align="center">
+# Todo App en Swift
 
-# Todo App in Swift
+Une application native macOS/iOS construite entierement avec **SwiftUI** et **CoreData**. Sous-taches, drag-and-drop, themes personnalisables, animations de particules et retours sonores/haptiques — le tout sans aucune dependance externe.
 
-A native macOS/iOS application built entirely with **SwiftUI** and **CoreData**. Subtasks, drag-and-drop, customizable themes, particle animations and sound/haptic feedback — all without any third-party dependencies.
+![Swift](https://img.shields.io/badge/Swift-5.9+-orange?logo=swift)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-Framework-blue?logo=apple)
+![CoreData](https://img.shields.io/badge/CoreData-Persistence-green?logo=apple)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-![Swift](https://img.shields.io/badge/Swift-5.9+-F05138?style=for-the-badge&logo=swift&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-007AFF?style=for-the-badge&logo=apple&logoColor=white)
-![CoreData](https://img.shields.io/badge/CoreData-34C759?style=for-the-badge&logo=apple&logoColor=white)
-![macOS](https://img.shields.io/badge/macOS%2014+-FF9500?style=for-the-badge&logo=apple&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS%2017+-AF52DE?style=for-the-badge&logo=apple&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-FFD60A?style=for-the-badge)
-
-</div>
-
-> **[Lire en Francais](README.fr.md)**
+> **[Read in English](README.md)**
 
 ---
 
-## Features
+## Fonctionnalites
 
 ```
 +---------------------------------------------+
 |             Todo App                  [gear]|
 +---------------------------------------------+
-|  [ Enter a new task...          ] [+ Add]   |
+|  [ Entrer une nouvelle tache... ][+ Ajouter]|
 +---------------------------------------------+
-|  Active: 3       Done: 5       Total: 8     |
+|  Actives: 3     Terminees: 5     Total: 8   |
 +---------------------------------------------+
-|  [All]  [Active]  [Completed]               |
+|  [Tout]  [Actives]  [Terminees]             |
 +---------------------------------------------+
 |                                             |
-|  [x] Buy groceries              [edit][del] |
-|      |-- [x] Milk                           |
-|      |-- [ ] Eggs                           |
-|      |-- [x] Bread                          |
-|      Progress: =========>       66%         |
+|  [x] Acheter des courses        [edit][del] |
+|      |-- [x] Lait                           |
+|      |-- [ ] Oeufs                          |
+|      |-- [x] Pain                           |
+|      Progression: =========>     66%        |
 |                                             |
-|  [ ] Finish the project         [edit][del] |
-|      |-- [ ] Write tests                    |
-|      |-- [ ] Fix bugs                       |
-|      Progress: =>               0%          |
+|  [ ] Finir le projet            [edit][del] |
+|      |-- [ ] Ecrire les tests               |
+|      |-- [ ] Corriger les bugs              |
+|      Progression: =>                0%      |
 |                                             |
-|  [x] Clean the house            [edit][del] |
+|  [x] Nettoyer la maison         [edit][del] |
 |                                             |
 +---------------------------------------------+
 ```
 
-### Task Management
-- Create, edit and delete tasks
-- Mark tasks as completed with an animated checkbox toggle
-- Drag-and-drop reordering with persistent sort order
-- Filter tasks: **All** / **Active** / **Completed**
-- Real-time statistics (active, completed, total)
+### Gestion des taches
+- Creer, modifier et supprimer des taches
+- Marquer les taches comme terminees avec une case a cocher animee
+- Reordonnancement par drag-and-drop avec ordre persistant
+- Filtrer les taches : **Tout** / **Actives** / **Terminees**
+- Statistiques en temps reel (actives, terminees, total)
 
-### Subtasks
-- Add subtasks to any task
-- Progress bar showing completion percentage
-- Collapsible subtask lists
-- Independent drag-and-drop reordering per task
+### Sous-taches
+- Ajouter des sous-taches a n'importe quelle tache
+- Barre de progression du pourcentage de completion
+- Listes de sous-taches repliables
+- Reordonnancement drag-and-drop independant par tache
 
-### Customization (Settings Panel)
+### Personnalisation (Panneau de reglages)
 
 ```
 +------------------------------------------+
-|            Settings                [X]   |
+|           Reglages                 [X]   |
 +------------------------------------------+
 |                                          |
-|  Appearance                              |
+|  Apparence                               |
 |  +------------------------------------+  |
-|  | Dark Mode              [ON /off]   |  |
+|  | Mode sombre          [OUI/non]     |  |
 |  |                                    |  |
-|  | Accent Color                       |  |
-|  | [blue] [purple] [pink] [green]     |  |
-|  | [orange] [red] [rainb][gold]       |  |
+|  | Couleur d'accentuation             |  |
+|  | [bleu] [violet] [rose] [vert ]     |  |
+|  | [orange] [rouge] [arc-c.] [dore ]  |  |
 |  |                                    |  |
-|  | Font Size                          |  |
-|  | [S] [M] [L] [XL]                   |  |
+|  | Taille de police                   |  |
+|  | [P] [M] [G] [TG]                   |  |
 |  +------------------------------------+  |
 |                                          |
-|  Behavior                                |
+|  Comportement                            |
 |  +------------------------------------+  |
-|  | Sound Effects          [ON /off]   |  |
-|  | Haptic Feedback        [ON /off]   |  |
-|  | Particles              [ON /off]   |  |
-|  | Celebrations           [ON /off]   |  |
+|  | Effets sonores        [OUI/non]    |  |
+|  | Retour haptique       [OUI/non]    |  |
+|  | Particules            [OUI/non]    |  |
+|  | Celebrations          [OUI/non]    |  |
 |  +------------------------------------+  |
 |                                          |
-|  Advanced                                |
+|  Avance                                  |
 |  +------------------------------------+  |
-|  | Animation Speed   0.5x ====> 3.0x  |  |
-|  | Particle Count    5 =========> 50  |  |
-|  | [    Reset to Defaults           ] |  |
+|  | Vitesse anim.    0.5x ====> 3.0x   |  |
+|  | Nb. particules   5 =========> 50   |  |
+|  | [ Reinitialiser par defaut       ] |  |
 |  +------------------------------------+  |
 |                                          |
 +------------------------------------------+
 ```
 
-### Visual Effects
-- Animated particle background
-- Celebration overlay with confetti on task completion
-- Spring and bounce animations throughout the UI
-- Gradient backgrounds and dynamic accent colors
+### Effets visuels
+- Fond anime avec particules
+- Overlay de celebration avec confettis a la completion d'une tache
+- Animations spring et bounce dans toute l'interface
+- Fonds en degrade et couleurs d'accentuation dynamiques
 
-### User Feedback
-- Sound effects — Glass (add), Funk (delete), Pop (reorder)
-- Haptic feedback on interactions
-- Visual animations on every state change
+### Retours utilisateur
+- Effets sonores — Glass (ajout), Funk (suppression), Pop (reordonnancement)
+- Retour haptique sur les interactions
+- Animations visuelles a chaque changement d'etat
 
 ---
 
-## Tech Stack
+## Stack technique
 
 ```
 +---------------------------------------------------+
 |                    SwiftUI                        |
-|            (Views, Animations, State)             |
+|            (Vues, Animations, Etat)               |
 +------------------------+--------------------------+
 |                        |                          |
 |     CoreData           |       Combine            |
-|  (Persistence)         |  (@Published, reactive)  |
+|  (Persistance)         |  (@Published, reactif)   |
 +------------------------+--------------------------+
 |                        |                          |
 |  UniformTypeIdentifiers|      SF Symbols          |
-|   (Drag & Drop)        |      (All icons)         |
+|   (Drag & Drop)        |    (Toutes les icones)   |
 +------------------------+--------------------------+
 ```
 
-**Zero third-party dependencies** — built entirely with Apple frameworks.
+**Zero dependance externe** — construit uniquement avec les frameworks Apple.
 
 ---
 
-## Project Structure
+## Structure du projet
 
 ```
 TodoApp/
 │
-├── TodoAppApp.swift              # Entry point & CoreData injection
+├── TodoAppApp.swift              # Point d'entree & injection CoreData
 │
-├── Views/
-│   ├── ContentView.swift         # Main view — list, filters, stats
-│   ├── TodoRowView.swift         # Task row + subtask UI
-│   └── SettingsView.swift        # Settings panel
+├── Vues/
+│   ├── ContentView.swift         # Vue principale — liste, filtres, stats
+│   ├── TodoRowView.swift         # Ligne de tache + sous-taches
+│   └── SettingsView.swift        # Panneau de reglages
 │
-├── Models/
+├── Modeles/
 │   ├── Models.swift              # FilterType, AccentColor, FontSize, AppSettings
-│   ├── CoreDataModels.swift      # CoreData extensions & CRUD manager
+│   ├── CoreDataModels.swift      # Extensions CoreData & gestionnaire CRUD
 │   └── Persistence.swift         # PersistenceController (singleton)
 │
 ├── Animations/
-│   ├── AnimationComponents.swift     # Particles & celebration effects
-│   ├── CelebrationManager.swift      # Global celebration state
-│   └── ParticleBackgroundView.swift  # Background particle wrapper
+│   ├── AnimationComponents.swift     # Particules & effets de celebration
+│   ├── CelebrationManager.swift      # Etat global de celebration
+│   └── ParticleBackgroundView.swift  # Wrapper particules en arriere-plan
 │
 ├── Drag & Drop/
-│   └── DragDropSolution.swift    # Transferable types & drag gestures
+│   └── DragDropSolution.swift    # Types Transferable & gestes de drag
 │
-└── Data/
-    └── TodoApp.xcdatamodeld/     # CoreData schema
+└── Donnees/
+    └── TodoApp.xcdatamodeld/     # Schema CoreData
 ```
 
 ---
@@ -165,31 +159,31 @@ TodoApp/
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                       UI Layer                          │
+│                     Couche UI                           │
 │                                                         │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
 │  │ ContentView  │  │ TodoRowView  │  │ SettingsView │   │
 │  │              │  │              │  │              │   │
-│  │ - Task list  │  │ - Checkbox   │  │ - Dark mode  │   │
-│  │ - Filters    │  │ - Subtasks   │  │ - Colors     │   │
-│  │ - Stats      │  │ - Progress   │  │ - Sounds     │   │
-│  │ - Add input  │  │ - Drag/Drop  │  │ - Particles  │   │
+│  │ - Liste      │  │ - Checkbox   │  │ - Mode sombre│   │
+│  │ - Filtres    │  │ - Sous-taches│  │ - Couleurs   │   │
+│  │ - Stats      │  │ - Progression│  │ - Sons       │   │
+│  │ - Ajout      │  │ - Drag/Drop  │  │ - Particules │   │
 │  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘   │
 │         │                 │                  │          │
 └─────────┼─────────────────┼──────────────────┼──────────┘
           │                 │                  │
 ┌─────────┼─────────────────┼──────────────────┼──────────┐
 │         ▼                 ▼                  ▼          │
-│                   State Layer                           │
+│                  Couche d'etat                          │
 │                                                         │
 │  @FetchRequest ←──── CoreData ────→ @Published          │
-│  (reactive queries)   (SQLite)      (AppSettings)       │
+│  (requetes reactives) (SQLite)      (AppSettings)       │
 │                                                         │
 └─────────────────────────┬───────────────────────────────┘
                           │
 ┌─────────────────────────┼───────────────────────────────┐
 │                         ▼                               │
-│                   Data Layer                            │
+│                Couche de donnees                        │
 │                                                         │
 │  ┌─────────────────┐     ┌──────────────────┐           │
 │  │    TodoItem     │────►│   SubtaskItem    │           │
@@ -200,60 +194,61 @@ TodoApp/
 │  │ - sortOrder     │     │ - sortOrder      │           │
 │  └─────────────────┘     └──────────────────┘           │
 │                                                         │
-│              CoreDataManager (CRUD singleton)           │
+│           CoreDataManager (singleton CRUD)              │
 └─────────────────────────────────────────────────────────┘
 ```
 
-### State Management Flow
+### Flux de gestion d'etat
 
 ```
-User Action ──► @State (local UI) ──► CoreDataManager ──► CoreData
-                                                              │
-                                              @FetchRequest ◄─┘
-                                                    │
-                                              SwiftUI View
-                                             (auto-refresh)
+Action utilisateur ──► @State (UI local) ──► CoreDataManager ──► CoreData
+                                                                     │
+                                                     @FetchRequest ◄─┘
+                                                           │
+                                                      Vue SwiftUI
+                                                   (rafraichissement
+                                                     automatique)
 ```
 
 ---
 
-## Requirements
+## Prerequis
 
-| Requirement | Minimum Version |
-|-------------|-----------------|
-| Xcode       | 15.0+           |
-| Swift       | 5.9+            |
-| macOS       | 14.0+ (Sonoma)  |
-| iOS         | 17.0+           |
+| Prerequis | Version minimale |
+|-----------|-----------------|
+| Xcode     | 15.0+           |
+| Swift     | 5.9+            |
+| macOS     | 14.0+ (Sonoma)  |
+| iOS       | 17.0+           |
 
 ---
 
-## Getting Started
+## Demarrage rapide
 
-### 1. Clone the repository
+### 1. Cloner le depot
 
 ```bash
 git clone https://github.com/moimat2345/Todo-app-in-swift.git
 cd Todo-app-in-swift
 ```
 
-### 2. Open in Xcode
+### 2. Ouvrir dans Xcode
 
 ```bash
 open TodoApp.xcodeproj
 ```
 
-### 3. Build & Run
+### 3. Compiler et lancer
 
 ```
-Xcode ──► Select target (Simulator / Device) ──► Cmd + R ──► Done
+Xcode ──► Choisir la cible (Simulateur / Appareil) ──► Cmd + R ──► C'est pret
 ```
 
-> No additional setup needed — no pods, no packages, no API keys.
+> Aucune configuration supplementaire — pas de pods, pas de packages, pas de cles API.
 
 ---
 
-## CoreData Model
+## Modele CoreData
 
 ```
 ┌─────────────────────┐          ┌─────────────────────┐
@@ -271,14 +266,14 @@ Xcode ──► Select target (Simulator / Device) ──► Cmd + R ──► D
 
 ---
 
-## Screenshots
+## Captures d'ecran
 
-<!-- Add your screenshots here -->
-<!-- ![Main View](screenshots/main.png) -->
-<!-- ![Settings](screenshots/settings.png) -->
+<!-- Ajoutez vos captures d'ecran ici -->
+<!-- ![Vue principale](screenshots/main.png) -->
+<!-- ![Reglages](screenshots/settings.png) -->
 
 ---
 
-## License
+## Licence
 
-This project is available under the [MIT License](LICENSE).
+Ce projet est disponible sous la [licence MIT](LICENSE).
