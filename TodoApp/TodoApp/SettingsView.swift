@@ -22,7 +22,7 @@ struct SettingsView: View {
     }
     
     private var headerSection: some View {
-        Text("⚙️ Paramètres")
+        Text("Paramètres")
             .font(.largeTitle)
             .fontWeight(.bold)
     }
@@ -67,7 +67,7 @@ struct SettingsView: View {
     
     private var appearanceCard: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text("🎨 Apparence")
+            Text("Apparence")
                 .font(.headline)
             
             darkModeToggle
