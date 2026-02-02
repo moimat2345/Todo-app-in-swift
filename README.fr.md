@@ -283,6 +283,12 @@ Xcode ──► Choisir la cible (Simulateur / Appareil) ──► Cmd + R ─�
 ### Filtre — Taches actives
 ![Filtre actives](Screenshots/filter-active.png)
 
+### Panneau de reglages
+![Reglages](Screenshots/settings.png)
+
+### Mode sombre
+![Mode sombre](Screenshots/dark-mode.png)
+
 ---
 
 ## Licence

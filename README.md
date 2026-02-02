@@ -288,6 +288,12 @@ Xcode ──► Select target (Simulator / Device) ──► Cmd + R ──► D
 ### Filter — Active Tasks
 ![Filter Active](Screenshots/filter-active.png)
 
+### Settings Panel
+![Settings](Screenshots/settings.png)
+
+### Dark Mode
+![Dark Mode](Screenshots/dark-mode.png)
+
 ---
 
 ## License
