@@ -152,9 +152,6 @@ TodoApp/
 │   ├── CelebrationManager.swift      # Global celebration state
 │   └── ParticleBackgroundView.swift  # Background particle wrapper
 │
-├── Drag & Drop/
-│   └── DragDropSolution.swift    # Transferable types & drag gestures
-│
 └── Data/
     └── TodoApp.xcdatamodeld/     # CoreData schema
 ```
@@ -200,14 +197,14 @@ TodoApp/
 │  │ - sortOrder     │     │ - sortOrder      │           │
 │  └─────────────────┘     └──────────────────┘           │
 │                                                         │
-│              CoreDataManager (CRUD singleton)           │
+│              PersistenceController (singleton)           │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ### State Management Flow
 
 ```
-User Action ──► @State (local UI) ──► CoreDataManager ──► CoreData
+User Action ──► @State (local UI) ──► viewContext.save() ──► CoreData
                                                               │
                                               @FetchRequest ◄─┘
                                                     │
@@ -240,7 +237,7 @@ cd Todo-app-in-swift
 ### 2. Open in Xcode
 
 ```bash
-open TodoApp.xcodeproj
+open TodoApp/TodoApp.xcodeproj
 ```
 
 ### 3. Build & Run
@@ -273,9 +270,23 @@ Xcode ──► Select target (Simulator / Device) ──► Cmd + R ──► D
 
 ## Screenshots
 
-<!-- Add your screenshots here -->
-<!-- ![Main View](screenshots/main.png) -->
-<!-- ![Settings](screenshots/settings.png) -->
+### Main View
+![Main View](Screenshots/main-view.png)
+
+### Adding a Subtask
+![Add Subtask](Screenshots/add-subtask.png)
+
+### Subtasks with Progress Bar
+![Subtasks](Screenshots/subtasks.png)
+
+### Full View with Multiple Tasks
+![Full View](Screenshots/full-view.png)
+
+### Filter — Completed Tasks
+![Filter Completed](Screenshots/filter-completed.png)
+
+### Filter — Active Tasks
+![Filter Active](Screenshots/filter-active.png)
 
 ---
 

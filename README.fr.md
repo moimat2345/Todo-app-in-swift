@@ -146,9 +146,6 @@ TodoApp/
 │   ├── CelebrationManager.swift      # Etat global de celebration
 │   └── ParticleBackgroundView.swift  # Wrapper particules en arriere-plan
 │
-├── Drag & Drop/
-│   └── DragDropSolution.swift    # Types Transferable & gestes de drag
-│
 └── Donnees/
     └── TodoApp.xcdatamodeld/     # Schema CoreData
 ```
@@ -194,14 +191,14 @@ TodoApp/
 │  │ - sortOrder     │     │ - sortOrder      │           │
 │  └─────────────────┘     └──────────────────┘           │
 │                                                         │
-│           CoreDataManager (singleton CRUD)              │
+│           PersistenceController (singleton)              │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ### Flux de gestion d'etat
 
 ```
-Action utilisateur ──► @State (UI local) ──► CoreDataManager ──► CoreData
+Action utilisateur ──► @State (UI local) ──► viewContext.save() ──► CoreData
                                                                      │
                                                      @FetchRequest ◄─┘
                                                            │
@@ -235,7 +232,7 @@ cd Todo-app-in-swift
 ### 2. Ouvrir dans Xcode
 
 ```bash
-open TodoApp.xcodeproj
+open TodoApp/TodoApp.xcodeproj
 ```
 
 ### 3. Compiler et lancer
@@ -268,9 +265,23 @@ Xcode ──► Choisir la cible (Simulateur / Appareil) ──► Cmd + R ─�
 
 ## Captures d'ecran
 
-<!-- Ajoutez vos captures d'ecran ici -->
-<!-- ![Vue principale](screenshots/main.png) -->
-<!-- ![Reglages](screenshots/settings.png) -->
+### Vue principale
+![Vue principale](Screenshots/main-view.png)
+
+### Ajout d'une sous-tache
+![Ajout sous-tache](Screenshots/add-subtask.png)
+
+### Sous-taches avec barre de progression
+![Sous-taches](Screenshots/subtasks.png)
+
+### Vue complete avec plusieurs taches
+![Vue complete](Screenshots/full-view.png)
+
+### Filtre — Taches terminees
+![Filtre terminees](Screenshots/filter-completed.png)
+
+### Filtre — Taches actives
+![Filtre actives](Screenshots/filter-active.png)
 
 ---
 
